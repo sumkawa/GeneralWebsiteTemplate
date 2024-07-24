@@ -11,5 +11,6 @@
   cursor: pointer;
 }
 .wrapper:hover {
-  background: hsl(0deg 0% 50% / 0.2);
+  transition: transform 0.2s ease;
+  transform: scale(1.2);
 }

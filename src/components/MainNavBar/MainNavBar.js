@@ -11,11 +11,9 @@ import './styles.css';
 const MainNavBar = () => {
   const savedTheme = cookies().get('color-theme');
   const theme = savedTheme?.value || 'light';
-
-  const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
   return (
     <NavigationMenu.Root className='NavigationMenuRoot'>
-      <NavigationMenu.List className='NavigationMenuList'>
+      <NavigationMenu.List className={`NavigationMenuList ${theme}`}>
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className='NavigationMenuTrigger'>
             Learn <CaretDownIcon className='CaretDown' aria-hidden />
@@ -32,13 +30,21 @@ const MainNavBar = () => {
                 </NavigationMenu.Link>
               </li>
 
-              <ListItem href='https://stitches.dev/' title='Stitches'>
+              <ListItem
+                href='https://stitches.dev/'
+                title='Stitches'
+                className='ListItemText'
+              >
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
-              <ListItem href='/colors' title='Colors'>
+              <ListItem href='/colors' title='Colors' className='ListItemText'>
                 Beautiful, thought-out palettes with auto dark mode.
               </ListItem>
-              <ListItem href='https://icons.radix-ui.com/' title='Icons'>
+              <ListItem
+                href='https://icons.radix-ui.com/'
+                title='Icons'
+                className='ListItemText'
+              >
                 A crisp set of 15x15 icons, balanced and consistent.
               </ListItem>
             </ul>
@@ -54,34 +60,43 @@ const MainNavBar = () => {
               <ListItem
                 title='Introduction'
                 href='/primitives/docs/overview/introduction'
+                className='ListItemText'
               >
                 Build high-quality, accessible design systems and web apps.
               </ListItem>
               <ListItem
                 title='Getting started'
                 href='/primitives/docs/overview/getting-started'
+                className='ListItemText'
               >
                 A quick tutorial to get you up and running with Radix
                 Primitives.
               </ListItem>
-              <ListItem title='Styling' href='/primitives/docs/guides/styling'>
+              <ListItem
+                title='Styling'
+                href='/primitives/docs/guides/styling'
+                className='ListItemText'
+              >
                 Unstyled and compatible with any styling solution.
               </ListItem>
               <ListItem
                 title='Animation'
                 href='/primitives/docs/guides/animation'
+                className='ListItemText'
               >
                 Use CSS keyframes or any animation library of your choice.
               </ListItem>
               <ListItem
                 title='Accessibility'
                 href='/primitives/docs/overview/accessibility'
+                className='ListItemText'
               >
                 Tested in a range of browsers and assistive technologies.
               </ListItem>
               <ListItem
                 title='Releases'
                 href='/primitives/docs/overview/releases'
+                className='ListItemText'
               >
                 Radix Primitives releases and their changelogs.
               </ListItem>
@@ -111,6 +126,7 @@ const MainNavBar = () => {
   );
 };
 
+// eslint-disable-next-line react/display-name
 const ListItem = React.forwardRef(
   ({ className, children, title, ...props }, forwardedRef) => (
     <li>
