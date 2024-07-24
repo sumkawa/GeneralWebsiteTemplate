@@ -1,10 +1,10 @@
-export const customers = [
+// placeholder-data.js
+export const users = [
   {
-    uuid: '1a2b3c4d5e',
-    username: 'user1',
+    id: '1a2b3c4d5e',
+    name: 'user1',
     email: 'user1@example.com',
-    habits_added: 5,
-    total_streaks: 150,
+    password: 'password1', // Plain text password, should be hashed
     habits: [
       {
         id: 'h1',
@@ -23,11 +23,10 @@ export const customers = [
     ],
   },
   {
-    uuid: '2b3c4d5e6f',
-    username: 'user2',
+    id: '2b3c4d5e6f',
+    name: 'user2',
     email: 'user2@example.com',
-    habits_added: 3,
-    total_streaks: 90,
+    password: 'password2', // Plain text password, should be hashed
     habits: [
       {
         id: 'h3',
