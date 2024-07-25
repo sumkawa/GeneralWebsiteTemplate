@@ -5,7 +5,6 @@ export default function Home() {
     <main className={styles.main}>
       <div>
         <span className={styles.span}>Craft impeccable applications.</span>
-        <span></span>
       </div>
     </main>
   );

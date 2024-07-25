@@ -2,8 +2,8 @@
 import { db } from '@vercel/postgres';
 
 export async function GET(req) {
-  // Use req.nextUrl to access route parameters in Next.js app directory
-  const uuid = req.nextUrl.pathname.split('/').pop(); // Extract the last part of the path as the UUID
+  const { pathname } = req.nextUrl;
+  const uuid = pathname.split('/').pop(); // Get the last segment of the path
   console.log('UUID received:', uuid);
 
   const client = await db.connect();
@@ -15,10 +15,16 @@ export async function GET(req) {
       });
     }
 
+    // Fetch user data along with their habits
     const { rows } = await client.sql`
-      SELECT * FROM users WHERE id = ${uuid}
+      SELECT 
+        u.id, u.name, u.email, 
+        json_agg(h.*) AS habits 
+      FROM users u
+      LEFT JOIN habits h ON u.id = h.user_id
+      WHERE u.id = ${uuid}
+      GROUP BY u.id
     `;
-    console.log('Database rows:', rows);
 
     if (rows.length === 0) {
       return new Response(JSON.stringify({ error: 'User not found' }), {

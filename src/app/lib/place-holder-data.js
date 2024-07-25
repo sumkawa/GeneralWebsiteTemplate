@@ -1,4 +1,4 @@
-// placeholder-data.js
+// src/lib/placeholder-data.js
 export const users = [
   {
     id: '1a2b3c4d5e',
