@@ -7,7 +7,7 @@ export const LIGHT_COLORS = {
 
 export const DARK_COLORS = {
   '--color-text': '#EEEEF0',
-  '--color-background': '#121212 ',
+  '--color-background': '#101010',
   '--color-primary': 'hsl(50deg 100% 50%)',
   '--color-secondary': 'hsl(210deg 100% 70%)',
 };

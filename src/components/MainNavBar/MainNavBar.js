@@ -7,6 +7,7 @@ import { FaceIcon, ImageIcon, SunIcon } from '@radix-ui/react-icons';
 import { LIGHT_COLORS, DARK_COLORS } from '@/constants';
 import DarkLightToggle from '@/components/DarkLightToggle';
 import './styles.css';
+import Link from 'next/link';
 
 const MainNavBar = () => {
   const savedTheme = cookies().get('color-theme');
@@ -16,17 +17,19 @@ const MainNavBar = () => {
       <NavigationMenu.List className={`NavigationMenuList ${theme}`}>
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className='NavigationMenuTrigger'>
-            Learn <CaretDownIcon className='CaretDown' aria-hidden />
+            Habits <CaretDownIcon className='CaretDown' aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className='NavigationMenuContent'>
             <ul className='List one'>
               <li style={{ gridRow: 'span 3' }}>
                 <NavigationMenu.Link asChild>
-                  <a className='Callout' href='/'>
+                  <Link className='Callout' href='/habits'>
                     <FaceIcon />
                     <div className='CalloutHeading'>Ready to get started?</div>
-                    <p className='CalloutText'>Craft your best application</p>
-                  </a>
+                    <p className='CalloutText'>
+                      Build better habits, from the ground up.
+                    </p>
+                  </Link>
                 </NavigationMenu.Link>
               </li>
 
@@ -121,7 +124,6 @@ const MainNavBar = () => {
       <div className='ViewportPosition'>
         <NavigationMenu.Viewport className='NavigationMenuViewport' />
       </div>
-      <DarkLightToggle initialTheme={theme} />
     </NavigationMenu.Root>
   );
 };

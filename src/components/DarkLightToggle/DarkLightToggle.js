@@ -39,7 +39,11 @@ function DarkLightToggle({ initialTheme }) {
 
   return (
     <button className={styles.wrapper} onClick={handleClick}>
-      {theme === 'light' ? <Sun size='1.5rem' /> : <Moon size='1.5rem' />}
+      {theme === 'light' ? (
+        <Sun className={styles.icon} size='1.5rem' />
+      ) : (
+        <Moon className={styles.icon} size='1.5rem' />
+      )}
     </button>
   );
 }
