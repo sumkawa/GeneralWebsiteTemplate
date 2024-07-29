@@ -1,35 +1,50 @@
 .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
+  position: relative; /* For absolute positioning of the sidebar */
   padding: 0 0.5rem;
+}
+
+.habitsHeader {
+  text-align: center; /* Center text */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.habitsContainerHeroText {
+  text-shadow: rgba(255, 255, 255, 0.2) 0px 0px 4px;
+  font-size: 2.5rem;
+  text-align: center;
 }
 .heroText {
   display: flex;
   justify-content: center;
-  --on-background: #f2f2f2;
+  --on-background: #ffffff;
   background-image: linear-gradient(
     to bottom,
     var(--on-background) 50%,
     transparent
   );
   letter-spacing: -1px;
-  text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 8px;
+  text-shadow: rgba(255, 255, 255, 0.2) 0px 0px 4px;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 32px;
+  font-size: 2.5rem;
   line-height: 72px;
   position: relative;
   z-index: 3;
 }
 .sidebar {
+  position: absolute;
+  right: 0; /* Position the sidebar to the right */
+  top: 50%; /* Center the sidebar vertically */
+  transform: translateY(-50%);
   width: 250px;
   padding: 2rem;
-  border: 1px solid #212121;
   border-radius: 50px;
-  background-color: #121212;
-  height: fit-content;
-  margin: 4rem;
 }
 
 .sidebar nav ul {
@@ -62,8 +77,10 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
   flex: 1;
-  padding-left: 2rem;
 }
 
 .AvatarRoot {
@@ -94,7 +111,7 @@
   justify-content: center;
   background-color: white;
   color: var(--violet-11);
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 500;
 }
@@ -118,4 +135,13 @@
 .NavigationMenuIndicator,
 .NavigationMenuViewport {
   display: none;
+}
+
+.habitsContainer {
+  border: 1px solid var(--color-border);
+  border-radius: 25px;
+  width: fit-content;
+  padding: 20px;
+  margin: 20px 0;
+  align-items: center;
 }

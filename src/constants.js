@@ -10,4 +10,7 @@ export const DARK_COLORS = {
   '--color-background': '#101010',
   '--color-primary': 'hsl(50deg 100% 50%)',
   '--color-secondary': 'hsl(210deg 100% 70%)',
+  '--color-border': '#5f606a',
+  '--color-widget-background': '#121212',
+  '--color-heatmap-cell': '#2A2A2A',
 };

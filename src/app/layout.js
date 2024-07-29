@@ -1,7 +1,6 @@
 import React from 'react';
 import DarkLightToggle from '@/components/DarkLightToggle';
 import './styles.css';
-
 import { cookies } from 'next/headers';
 import { LIGHT_COLORS, DARK_COLORS } from '@/constants';
 
